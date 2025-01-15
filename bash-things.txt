@@ -1,0 +1,8 @@
+Windows Powershell
+Dir                                 directory
+To open a python document           py documentname.py
+    or                              arrow/play looking icon in the top right corner, select python as an interpreter
+To go to the correct path           cd documentname
+Go back in the path                 cd ../
+Show all files in chosen dir        ls
+Clear terminal                      clear
