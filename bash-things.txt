@@ -6,3 +6,6 @@ To go to the correct path           cd documentname
 Go back in the path                 cd ../
 Show all files in chosen dir        ls
 Clear terminal                      clear
+
+If you need to update the Labs, Assignments, Lectures folders, look at labs/00-Misc/Pull-script.md. -- 
+--You can type the cd stuff manually in the correct folder (In this case inside the BWU/IDG2001 folder) 
