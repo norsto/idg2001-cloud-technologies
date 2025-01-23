@@ -1,0 +1,174 @@
+Client-Server Architecture
+
+Design Consideratons: Distributed Transparency
+
+    Aiming at full distribution transparency may be too much
+        There are communication latencies that cannot be hidden
+
+    Full transparency will cost performance ...
+
+Exposing distribution may be good
+Make use of locationbased sevices 
+when dealing with users in a different time zones
+When it makes it easier for users to understand 
+    e.g. when a server is down an error shows
+
+Design Consideratons: Openness
+    Interact with services from other open systems, irrespective of the underlying environment
+        systems should conform to well-defines interfaces
+        Systems should easily interoperate
+        Systems should support portability of applications
+        Systems should be easily extensible
+
+Design Consideratons: Failures
+    No single point of failure (e.g. if something crashes, it automatically restart, if a server is corrupted, it has a backup)
+    Data replication
+    Automatic actions on failure
+    Logging
+
+Design Consideratons: Scalability
+    Number of users and/or processes (size scalability)
+    Maximum distance between nodes (geographical scalability)
+    Number of administrative domains (administrative scalability)
+
+    Most systems account only, to a certain extent, for size scalability
+    Often a solution: Multiple powerful servers operating independently in parallel.
+
+    Root cause for scalability problems with a centralized solution:
+        The computational capacity, limited by the CPUs/GPUs
+        The storage capacity, including the transfer rate between CPUs and disks
+        The network between the user and the centralized services
+    
+Design Consideratons: Geogaphical Scalability
+    Can not simply go from LAN to WAN
+        ..
+            .
+    
+    WAN links are often inherently unreliable
+        ...
+    
+    Lack of a multipoint communication
+        ...
+
+Design Consideratons: Administrative Scalability
+    Ex. conflicting policies concerning usage (and thus payment), management, and security
+        Typical issue in hybrid clouds
+
+Design Consideratons: Techniques for Scaling
+    Loose coupling of the components
+    Stateless design (e.g., REST)
+    Database choice and design
+
+    Partition of data and computations across multiple machines
+    Move computations to clients (Java applets)
+    Decentralized naming services (DNS)
+    Decentralized information systems (WWW)
+
+    Replication and caching: Make copies of data available at differnt machines
+        Cache is a temporary storage (stores files, data, so on so systems are more efficient)
+        Replicated file servers and databases 
+        Mirror websites
+        Web caches (in browsers and proxies)
+        File caching (at a server and client)
+
+Architecture 
+Software Architecture
+    Logical organization and interaction of software components
+
+System architecture
+    ...
+
+Architectural Styles
+The notion of an architecural Styles    
+    ...
+    A component..
+    A connector..
+
+Layered Architectures
+    Component at layer Ln...
+    Ex. OSI model
+    Layering allows mastering the complexity   
+        Explicit structure allows identification and relationship of complexs...
+
+    Protocol, service, interface
+
+Application Layering   
+    Application-interface layer contains units for interfacing to users or external applications
+    Processing layer contains the core functonality of an application
+    Data layer layer contains...
+
+Object-Based Architectures
+    Objects correspond to components 
+    Components are connected via a (remote) procedure call mechanism
+
+RESTful Architectures
+    View a distributed system as a collection of resources, individually managed by components. --
+    -- Resources may be added, removed, retrieved, and modified by (remote) applications.
+        Resources are identified through a single naming scheme
+        All services offer the same interface
+        Messages sent to or from a service are fully self-described
+        After executing an operation at a service, that component forgets everything about a caller
+
+    Basic Operations:
+        PUT     create a new resource
+        POST    Modify a resource by transferrong a new state
+        GET     retrieve the state of a resource in some representation
+        DELETE  delete a resource
+
+Data-Centered Architectures
+    processes communicate through a common (passive or active) repository
+    Ex: Distributed file systems
+        Web-based data services
+
+Temporal and referential coupling
+                                Temporally      Temporally
+                                coupled         uncoupled
+    Referentially coupled       Direct          Mailbox
+    Referentially decoupled     Event-based     Shared data space
+
+Event-Based Architectures
+    Processes communicate through propagation of events
+    Events can optionally carry data
+    Publish/subscribe systems   
+        Processes publish events
+        Only processes having subscribers ...
+    Allows loose coupling of processing
+        ...
+
+Shared Data Spaces
+    Event-based architecture combined with data-centered architecture
+    Processes are also decoupled in time ()
+    Data can be accessed also using a description instead of explicit reference
+
+System Architectures
+    Centralized architectures
+    Decentralized architectures (such as Peer-to-Peer)
+    Hybrid architectures
+
+Centralized Architectures
+    Client-server model
+    Request..
+
+Multi-tiered Architectures
+    Three-tiered architecture
+        ...
+        ...
+    Verticel distribution
+        ...
+    Simplest organization is to have only two types of machines 
+
+Call Semantics and Transmission Failures
+    Ideally: Exactly once
+    Zero-or-more ("maybe"): service may or may not have been called 
+    At-least-once: keep requesting service until valid response arrives ar client
+    At-most-: no reply may mean that no execution took place 
+    Idempotent vs non-idempotent operations 
+        Idempotent (repeatable) operation can be repeated multiple times without harm
+    Ex. spamming a message; message should only be sent once, but will probably be sent multiple times
+
+Web: Original Simple Client-Server Architecture
+    Typical operation sequence:
+        1. Browser requests a document reffered by means of URL 
+        2. Web server fetches document from local file
+        3. Web server transmits document to browser
+        4. Browser displays document 
