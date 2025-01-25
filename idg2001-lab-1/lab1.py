@@ -10,7 +10,7 @@ with open('idg2001-lab-1/username.csv') as file:
     # the file gets read and saved into the variable text
     text = file.read()
 
-# .split splits the text on the end of a line/ at new line and saves the lines in the variable lines
+# .split splits the text on the end of a line/at new line and saves the lines in the variable lines
 lines = text.split('\n')
 # a loop goes through each line of the file, where line represents each line/row as a string
 for line in lines:
