@@ -1,0 +1,131 @@
+Process
+    A program in execution in a processor
+    Like a thought: Only there when performed, then disappears
+    ...
+
+Processor 
+    A system running/executing processes
+    Can be hardware or software
+    Is defined over a set of instructions, which can be automatically executed 
+
+Thread 
+    Executes its own piece of code, independently from other ...
+    ...
+    The minimal collection of values stored in the registers and memory. ....
+
+Why use threads? 
+    Avoid needless blocking...
+    ...
+    ...
+
+Parallellism
+    Single thread
+    Multi thread 
+    Multi process
+
+Process - Context Switching
+    Processor context
+        The minimal collection of values stored in the registers of a processor used for the execution of a series of instructions.
+        (E.g., stack pointer, addressing registers, program counter)
+    Thread context
+        The minimal collection of values stored in the registers and memory, used for the execution of a series of instructions.
+        (I.e., processor context, state)
+
+Process - Threads in servers
+
+Viritualization
+
+Operating Systems (OS)
+    (e.g., Temple-os, Mac-os, Linux, Windows, IOS, Android)
+    A system software that manages computer hardware and software resources, and provides common services for computer programs...
+
+No Viritual Machine (VM)
+    Word - Chrome - Database    (Programs)
+    ^
+    Windows                     (OS)
+    ^
+    Dell laptop                 (Hardware)
+    (look at powerpoint diagram)
+
+Hypervisor Type 1
+    VM1         VM2         VM3
+    Programs    Programs    Programs
+     ^          ^           ^
+    OS          OS          OS
+     ^          ^            ^
+               VMM
+                ^
+            Hardware
+
+Hypervisor Type 2
+    VM1     VM2     VM3         VM1         VM2         VM3           
+    Python  Apache  Database    Programs    Programs    Programs           
+    API     Server                
+    ^       ^       ^           ^           ^           ^
+    Linux   Linux   Windows     OS          OS          OS
+                    server
+    ^       ^       ^           ^           ^           ^
+    Programs + VMM                  Programs + VMM
+        ^
+        OS
+        ^
+    Hardware
+
+Type 1 ("bare metal")
+    Less overhead: 
+    Better control over hardware
+    Is made for this type of situation
+    Less familiar
+
+Type 2 ("Process VM")
+    Faster on host OS
+    Simple..?
+    Slower on guest OS
+
+proxmox
+
+VPN
+
+NAS (Network Attached Storage)
+
+Viritualization - OS
+    Program         >   Program
+    ^                   ^
+    Interface A         Interface 
+    ^                   ^
+    Hardware A          "Simulated" hardware A
+                        ^
+                        Interface B 
+                        ^
+                        Hardware B
+
+Direct HW(Hardware) Access       
+
+SaaS
+    Application
+    Web services, multimedia, business apps
+        Google docs
+        Gmail
+        YouTube
+
+PaaS 
+    Platforms
+    Software framework (python, .Net, nodejs), storage (DBs)
+        MS Azure
+        Google App Engine
+
+IaaS
+    Infrastructure
+    Coputation (VM), storage (block, file)
+        Amazon S3
+        Amazon EC2
+
+Not cloud
+    Hardware 
+    CPU, memory, disk, bandwidth 
+        Datacenters
+        Home server
+
+Beautiful soup
+
+(Update ur shit)
