@@ -4,3 +4,10 @@ WAN     Wide-Area Network
 CPU     Central Processing Unit
 GPU     Graphics Processing Unit
 DNS     Domain Name System
+OS      Operating System
+VM      Viritual Machine
+VMM     Viritual Machine Manager
+VPN     Viritual Private Network
+NAS     Network Attached Storage
+HW      HardWare 
+DB      DataBase
