@@ -1,0 +1,29 @@
+{
+    "VMs": [
+        {
+            "computerNum": "01",
+            "OS": "Linux Debian",
+            "Hosting": "TrueNAS"
+        },
+        {
+            "computerNum": "01",
+            "OS": "Linux Ubuntu",
+            "Hosting": "media serv."
+        },
+        {
+            "computerNum": "03",
+            "OS": "Linux Ubuntu",
+            "Hosting": "Portainer",
+            "Submodules": [
+                "Wireguard VPN",
+                "DuckDNS",
+                "MongoDB"
+            ]
+        },
+        {
+            "computerNum": "04",
+            "OS": "Windows",
+            "Hosting": "backup serv."
+        }
+    ]
+}

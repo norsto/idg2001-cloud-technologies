@@ -1,0 +1,163 @@
+Communications
+
+Connection-Oriented Sevice
+    Before exchanging data, the sender and reciever first explicitly establish a connecton, and possible negotiate...
+
+Connectionless Service
+    No setup in advance is required. The sender just transmits the first message when it's ready
+
+OSI and TCP/IP
+
+Communications
+    Layered protocols 
+    ISO OSI reference model
+        Layers
+        Interfaces 
+        Protocols 
+    connection-oriented vs connectionless
+
+    Message Encapsulation
+
+    Application Layer
+        Applications 
+        Application-specific abd general-purpose protocols
+        E.g., FTP, HTTP(S), SMTP, RTSP, SIP, SNMP
+    Transport Layer
+        Logical end-to-end comm. between processes 
+        Multiplexing of segments at sender, demultiplexing of segments at reciever
+        Reliable vs unreliable, connection-oriented vs (un)ordered
+        Acknowledgement
+        E.g., TCP, UDP, RTP, SCTP
+            For most communications you might want to use TCP(?)
+    Network Layer
+        Local comm. between hosts, (inter)networking
+        Routing and forwarding of datagrams/segments
+        Multi-node networking, addressing, routing and traffic control
+        Like a map
+        E.g., IPv4, IPv6
+    Data Link Layer
+        Transmission of data frames over a link
+        Transmission and switching 
+        Like a road sign 
+        E.g., IEEE 802 protocol family (Ethernet, WLAN, WiMAX, Bluetooth, Wi-Fi), MAC
+    Physical Layer
+        Cabels. Think physical stuff.
+        E.g., copper, fiber, radio, coax
+        Non-computer related things(?)
+
+OSI Layers
+    7. Application  (host layers)
+    6. Presentation
+    5. Session
+    4. Transport
+    3. Network      (media layers)
+    2. Data Link
+    1. Physical
+
+Middleware Protocols
+Session + presentation = Middleware
+    Additional services between application and OS
+    Security protocols for authentication and authorization
+    Commit protocols for transaction management
+    Locking protocols for concurrency management 
+    Comm. protocol (remote procedure call, remote method invocation, stream management)
+    E.g., libraries, game engines
+
+Protocols 
+    Application 
+    Middleware 
+    Operating System 
+    Hardware
+        Network 
+
+Persistent / Transient 
+    Persistent
+        Messages are stored in the middleware 
+        ... for as long as it takes to deliver the message
+        Like email/SMS: you can read it when you have the time
+    Transient 
+        Messages are not stored in the middleware 
+        Like a phone call: You must be available when getting the call
+
+Async / Sync 
+    Async
+        Think multi-threaded! Or having sent an email.
+        Sender can continue working right after sending the message 
+    Sync
+        Think single-threaded. Or calling somebody.
+        Sender (caller) must wait for a reply. Can't do anything until it is done 
+
+Discrete / Streaming 
+    Discrete 
+        Messages are part of a whole message, all of which must be sent
+        Like downloading a video
+    Streaming 
+        Not all messages must make it 
+        Like streaming a video
+
+Client-Server Architecture
+    Generally transient synchronous communication 
+        The client-servver communication is active 
+        Client(?) doesn't ask
+        Server is just waiting for oreders to do (which is why it is called a server)
+    Drawbacks of sync comm.
+        Client is blocked when waiting for reply
+        Requests and failures must be dealt with quickly
+        Not suitable for e.g. mail and news
+
+Communications
+    Message-oriented transient communication: Berkeley sockets
+    TCP socket primitives
+    Connection-oriented communication pattern using sockets
+
+Sockets in Python 
+    (see python files (client.py, server.py))
+
+Cryptography 
+    Symmetric
+        One key
+        Often faster 
+        Encrypting and sharing data
+    Asymmetric (public key)
+        Two keys
+        Often slower
+        Key exchange, signing and certificates 
+        SSH keys(?)
+    Hashing Algorithms 
+        (kindof a symmetric)
+    RSA Algorithm
+        something about multiplying two prime numbers
+        Not that safe 
+
+APIs 
+REST, RPC and more
+
+Types of APIs 
+    COBRA
+    RDA 
+    XML-RPC 
+    SOAP 
+    REST
+        REST isn't that good for something that has a lot of requests  
+    JSON-RPC 
+    ODATA
+    GraphQL
+        Is good for loads of requests 
+    gRPC
+    The ones that's important to us:
+        SOAP 
+        REST
+        GraphQL
+        RPC
+
+Simple API example 
+    (look at pp)
+
+Railway
+Render (we'll be using render, because it's free hehe)
+
+CronJobs
+    Creates Jobs on a repeating schedule
+    Is meant for performing regular scheduled actions such as backups and report generation
+
+Redis 

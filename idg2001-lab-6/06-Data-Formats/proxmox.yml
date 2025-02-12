@@ -1,0 +1,23 @@
+---
+name: Proxmox server
+computers:
+- ComputerNum: '01'
+  OS: Debian
+  Hosting: TrueNAS
+
+- ComputerNum: '02'
+  OS: Ubuntu
+  Hosting: media server
+  Submodules: []
+
+- ComputerNum: '03'
+  OS: Ubuntu
+  Hosting: Portainer
+  Submodules:
+  - Wireguard VPN
+  - DuckDNS
+  - MongoDB
+
+- ComputerNum: '04'
+  OS: Windows 11
+  Hosting: backup server
