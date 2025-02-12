@@ -115,3 +115,6 @@ Plaintext
     Word is not a plaintext
 
 A lot of binary is zip archives 
+
+Lab can be found at the end of the pp 
+    Yes, you're supposed to find the format that works best for the data/info given 
