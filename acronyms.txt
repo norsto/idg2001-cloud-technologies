@@ -11,3 +11,31 @@ VPN     Viritual Private Network
 NAS     Network Attached Storage
 HW      HardWare 
 DB      DataBase
+OSI     Open Systems Interconnection Model
+TCP     Transmission Control Protocol
+IP      Internet Protocol
+ISO     International Organization for Standardization
+FTP     File transfer Protocol
+SMTP    Simple Mail Transfer Protocol
+RTSP    Real Time Streaming Protocol
+SIP     Session Initiation Protocol
+SNMP    Simple Network Management Protocol
+UDP     User Datagram Protocol
+RTP     Real-Time Transport Protocol
+SCTP    Stream Control Transmission Protocol
+IEEE    Institute of Electrical and Electronics Engineers
+WLAN    Wireless Local Area Network
+WiMAX   Worldwide Interoperability for Microwave Access
+MAC     Message Authentication Code
+PDU     Protocol Data Unit
+RSA     Rivest-Shamir-Adleman (algorithm)
+RPC     Remote Procedure Call
+SOAP    Simple Object Access Protocol
+PP/pp   PowerPoint
+XML     eXtensible Markup Language
+CSV     Comma Separated Values
+YAML    Yet Another Markup Language 
+TOML    Tom's Obvious, Minimal Language
+IaC     Infrastructure as Code
+RAM     Random Access Memory
+SSH     Secure Shell

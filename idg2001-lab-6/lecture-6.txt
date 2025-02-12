@@ -1,0 +1,117 @@
+Data Formats 
+    Storing and sending 
+    Compression
+    Structured vs unstructured
+    Plaintext and serialization
+    Readability
+    Compatability
+
+    JSON
+    XML
+    CSV
+    TSV, WSV and other _SV
+    YAML
+    
+Structured and Unstructured 
+    Structured
+        Data which follows a pre-defined structure 
+        Quanititative
+        ex. CSV, _SV
+        RDB/SQL DB
+
+    Semi-Structured
+        JSON, YAML, TOML, XML
+        noSQL
+
+    Unstructured 
+        Data which does not 
+        Qualitative 
+        Ex. Text, images, Binary data
+
+JOSN
+    Multiple lines takes up more characters, takes more storage.
+    Needs quotationmarks kinda everywhere
+    Can't have comments
+    Uses , to separate each line (?)
+
+YAML
+    Has the same indent structure as Python
+    Don't need quotationmarks
+    Uses dashes 
+    Can have comments(?)
+
+TOML
+    Needs quotationmarks for strings 
+    Looks kinda like YAML
+    Use = instead of :
+    Uses , to separate strings 
+
+XML
+    Includes header
+    Like HTML
+    Outdated
+
+CSV
+    Comma Separated Values 
+    Shouldn't add spaces 
+    Separated by commas and columns
+    More storage friendly, as it's very compact 
+    Not great if you don't know how many of each thing you should have
+    Ex.:
+    firstName,lastName
+    Jane,Doe
+
+_SV 
+    Separated Values
+        Separated by whatever you choose?
+        Or tabs idk
+    Lots of unnecessary spaces
+    Looks good 
+
+Data Formats - Use Cases 
+    Store data sets (JSON, CSV, etc), e.g. sensor data, DB data
+    Send data (JSON, etc. for APIs) e.g. REST APIs
+    Config files (JSON, YAML, TOML) e.g. Infrastructure as Code (IaC)
+
+GitHub Actions 
+    Can set up automatic push and pull
+    tox 
+    config setups (?)
+    IaC config 
+
+Generic IaC Example 
+    Copy template VM (ViritualBox file)
+    Rename
+    Modify settings (cores, RAM, etc.)
+    Launch
+    Automatically do some setup within VM? using SSH?
+
+    example code /*
+    def run_cmd(cmd):
+        ...
+
+    for line in csv...:
+        name, OS, cores, RAM, storage = line
+
+        cmd_1 = f'cp {OS}--Template {name}'
+        cmd_2 = f'viritualbox --modifyVM {name}.....
+    */
+
+We'll be using docers 
+
+Online converters exists
+    https://json2yaml.com
+    https://jsonformatter.org/json-to-xml 
+    (use them, but not yet)
+
+Plaintext
+    Any readable information presented in a format that is accessible and usable withouth the need for decryption key or spesific decryption tools
+    Can open and actually read it and understand it 
+    Non-encrypted ?? => Need password hashing 
+    salt 
+        Random data fed as an additional input to a one-way function that hashes data, a password or passphrase
+        Gives different hashes for the same passwords, without salting it doesn't and ends up using the same hash for passwords that're the same 
+    Ex. JSON, XML
+    Word is not a plaintext
+
+A lot of binary is zip archives 
