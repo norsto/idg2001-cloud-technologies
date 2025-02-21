@@ -44,7 +44,7 @@ def parse_phone_number(number):
                 pNumber.append(separate_numbers[i])
                 #... join them together into one item with nothing sparating them using "" (aka. everything after 47), stored in fpNumber(full phone number)
                 fpNumber = "".join(pNumber)
-       
+
         # The return keyword is to exit a function and return a value 
         # Return with what got stored in flCode and fpNumber
         return (flCode, fpNumber) # (code, number) or None

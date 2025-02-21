@@ -1,0 +1,96 @@
+Web Services and HTTP 
+
+OSI model
+
+URI
+    long example of an URL 
+    the example.com part is the domain
+    en. part is the language, a sub-domain 
+    /forum/questions part is the path
+
+    schema -> (userinfo -> host -> port) -> authority -> path -> query -> fragment
+
+Web Service - Definition
+    According to W3C 
+        A software system designed to support interoperable ...
+
+Web Service 
+    Separate systems with clearly defined interfaces 
+        Which functionality they perform
+        Which data format they operate
+    Application independent 
+        No need to rebuild every system from scratch
+
+Provider and Consumer
+    Provider 
+        The server in the server-client system 
+        Also used...
+    Consumer....
+
+Two Camps
+    "Big Web Services" (SOAP)
+    REST 
+
+SOAP (Simple Object Access Protocol)
+    Format/language for sending and receiving messages
+    Uses XML ....
+
+REST (REpresentation State Transfer)
+    ...
+    Representation 
+        REST is resource-oriented
+        Any information which can be named is a resource 
+        Each resource can have several representations 
+        ...
+
+    REST Principels
+        Client-server architectural style
+        Communication is stateless
+        Caching 
+        Uniform and well-defined interface 
+        Layered (hierarchical) structure
+
+REST - and HTTP 
+    REST is generally run on HTTP
+        Provides the client-server communication
+        Provides interfaces with the HTTP methods 
+        ...
+
+HTTP (HyperText Transfer Protocol)
+    "an application-level protocol for... "
+    Usually works on TCP/IP
+    The most used protocol in WWW
+    Used for most API systems 
+    Allows for bidirectional transfer of resources between client and server 
+
+    HTTP Methods 
+        CRUD
+            GET     read
+            POST    create
+            PUT     update
+            DELETE  delete
+
+            PATCH 
+
+            HEAD 
+            OPTIONS
+
+    Available Servers
+        Apache httpd
+        ISS (Microsoft web server)
+        Python: Django, Gunicorn, Uvicorn (+Flask)
+        Java: Glassfish
+    
+    Available Client Librararies
+        Python:
+        JS/NodeJS:
+
+
+UTF-8
+
+DOS 
+    A single-user, single-tasking operating system with basic kernel functions that are non-reentrant
+
+Databases (tl;dr)
+    Relationsl, document, NoSQL, ket-value, graph 
+    F.ex. MySQL
