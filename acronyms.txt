@@ -11,7 +11,7 @@ VPN     Viritual Private Network
 NAS     Network Attached Storage
 HW      HardWare 
 DB      DataBase
-OSI     Open Systems Interconnection Model
+OSI     Open Systems Interconnection (model)
 TCP     Transmission Control Protocol
 IP      Internet Protocol
 ISO     International Organization for Standardization
@@ -39,3 +39,6 @@ TOML    Tom's Obvious, Minimal Language
 IaC     Infrastructure as Code
 RAM     Random Access Memory
 SSH     Secure Shell
+URI     Uniform Resource Identifier
+URL     Uniform Resource Locator
+CRUD    Create, Read, Update and Delete
