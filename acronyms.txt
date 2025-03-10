@@ -42,3 +42,5 @@ SSH     Secure Shell
 URI     Uniform Resource Identifier
 URL     Uniform Resource Locator
 CRUD    Create, Read, Update and Delete
+RDB     Relational DataBase
+OLTP    

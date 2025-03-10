@@ -1,0 +1,79 @@
+Data Considerations and Replications
+
+Data Characteristics 
+    Physical characteristics 
+    Performance requirements 
+    Volatility 
+    Volume 
+    Regulatory requirements 
+    Transaction boundaries 
+    Retention period 
+
+Multi-tenant or Single-tenant 
+    Private cloud / non-cloud
+    Total isolation
+    Data isolation 
+    Data segregation 
+        Slightly less secure than data isolation
+    
+Selecting Data Store Types
+Relational Databases (RDB) or NoSQL DB?
+
+    Advantages of RDB
+        Great for online transaction processing (OLTP) activities
+        Superior security features and a powerful querying engine 
+    
+    Disadvantages
+        When data gets big, RDB just cannot perform fast enough
+
+    Ex.: MySQL, PostgreSQL 
+
+Selecting Data Store Types 
+    Key-value Store 
+        A key-value store is a data storage paradigm designed for storing, retrieving, 
+        and managing associative arrays
+        They're basically JSON/dict.
+        Often fast, but little structure
+        Ex. Redis 
+
+    Document Store 
+        Stores unstructured data within documents 
+        Data is often encapsulated with uses XML, JSON, PDF, and other common document types 
+        Most logging solutions use a document store 
+        Kinda like putting files in folders 
+        Ex. MongoDB, FireBase 
+
+    Graph Databases 
+        Stores and manages interconnected relationships 
+        Are often used to show visual representations of relationships, e.g. in social media analysis
+
+    Hybrid 
+        Higher complexity, but possibly worth it for scaling reasons
+
+Data Replication 
+
+Why Replicate Data?
+    Enhance reliablility and scalability
+        Protection against hardware crashes and data corruption
+        
+    Improving performance 
+        Scaling in terms of number and geographical area 
+        Caching is a special form of replication 
+        Trade-off between performance and scalability 
+
+Data Replication Challenges
+    Keeping replicas consistent 
+        When one copy is updated, other copies need to be updated as well
+        Several consistency models 
+        Protocols for distribution of updates 
+
+Caching 
+
+Replication as a Scaling Technique 
+    Caching: Placing copies of objects near processes 
+    Trade-off: Keeping copies up to date may require more network bandwidth, if access-to-update ratio is low
+    Keeping multiple copies consistent may cause scaling problems 
+        Ideally update of all copies is performed as a single atomic operation 
+        The required global synchronization can be costly 
+        Solution: Loosen consistency constraints
+
