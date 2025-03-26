@@ -1,0 +1,148 @@
+Navigating
+    Paths: (nothing) 
+
+    ./<script-name.sh>              Run local (executable) script
+    ssh                             SSH
+    git                             Git
+    python                          Run Python thingy
+    echo                            Print stuff
+    apt, pacman*, brew, winget      Package manager
+    tar, zip                        Makes a folder into a file? / Compression
+    grep, sed                       String search stuff
+    top, htop / kill, pkill         Task manager / end process
+
+Terminology 
+    CLI
+        Command Line Interface (not GUI)
+    Console
+        The physical PC - somtimes.. Historical terms
+    Terminal 
+        Program for CLI stuff: windows terminal, terminal, iTerm2, CMD
+    Shell 
+        Programs which process commands. Like programming languages:
+            Bash, PowerShell, cmd, zsh, OhMyPosh, Batch
+                Some programs have their own shells 
+
+Special stuff
+    Spaces          Quotes "v 1.txt" or v\ 1.txt
+    $var            Variables
+    sudo <command>  Super User DO: Run with admin rights 
+
+Keyboard 
+    enter
+    tab 
+    ctrl + c 
+    ctrl + z    Send active to background
+    ctrl + a/e  Home/end
+
+Profile 
+    .bashrc, .zshrc, .zprofile
+        Ran every time you open a new shell 
+        Things like aliasases, shell setup, etc.
+
+Python Argv
+    import sys
+    args = sys.argv 
+    print(args)
+    # ["file.py", "arg1", "arg2"]
+
+CLI VS GUI 
+    Cons of CLI 
+        Ugly, not user friends, scary, help
+        Inefficient (sometimes)
+    
+    Pros of CLI 
+        Repeatable, copyable, scriptable and automatable 
+        Available when SSH-ing abd similar 
+        Fast (sometimes)
+
+
+Docker 1
+Goals:
+    DevOps, CI/CD ...
+
+
+    Planning    <               Deploy
+        v         \
+    Codebase       \               v
+        v        Integration    Operate
+    Building                \
+        v                    \      v
+    Testing                     Monitor
+
+DevOps, CI/CD, ++
+    Planning: Git(hub), Jira
+    Codebase: Git, Jira
+    Building: Gradle(?), Maven, Make
+    Testing: Pytest, Selenium
+
+    Integration: Jenkins
+
+    Deploy: Docker, Chef
+    Operate: Docker, Chef
+    Monitor: Nagios, Grafana, Power BI 
+
+Docker TL;DR 
+    Like a mini-VM 
+    Isolated from the global environment 
+    A bit like pip modules: You can download other images ("VMs") and use them 
+
+Docker VS VM 
+    Uses less space 
+    Faster boot-up time 
+    Generally better performance
+    Easy to scale up 
+    Easily portable
+
+Levels of Isolation 
+    (more isolated)  
+        Isolated hardware       Different servers 
+        VM                      ViritualBox, ProxMox
+        Container               Docker
+        Environment             viritualenv node_modules 
+        Global env              ....
+    (less isolated)
+
+Docker Concepts
+    Docker 
+        Docker client, server and registry 
+        Docker images
+        Docker containers 
+        Docker file: Setup/config file 
+        Volumes 
+    
+    OpenStack 
+        OpenStack environment 
+        OS images 
+        Running instances/VMs 
+        Configuration field/file 
+        Volumes 
+
+Docker Flow 
+    Docker file -> Docker image -> Docker container 
+
+    Docker file ->  Docker image -> Docker container 
+                        v 
+                    something    -> something 
+
+How to Even 
+    docker container create [options] image [command] [arg...]
+    docker pull <image>:<tag>: Pulls an image from DTR
+    docker push <image>:<tag>: Push an image from DTR
+    docker images: Lists local images
+    docker ps: Lists running containers
+    docker rm <id>: Lists running containers
+    docker start <id>: Lists running containers 
+    docker help
+
+Dockerfile config (example)
+    FROM node:19
+    WORKDIR /app
+    COPY package*.json ./
+    RUN npm install
+    COPY . .
+    ENV PORT=8080
+    EXPOSE 8080
+    RUN echo "The ARG variable value is $PORT"
+    CMD ["npm", "start"]
+
