@@ -1,0 +1,86 @@
+...... some docker stuff that's important 
+
+Automated Test Environments 
+    That video he wanted us to watch 
+
+Unit Testing 
+    ...
+
+Project Structure 
+    project/
+        src/
+            modulename/
+                file.py 
+                    get_file_info(str) -> dict
+    tests/ 
+        test_file1.py   
+            test_get_file_info()
+
+Expected Behaviour 
+    print(get_file_info('users/paul/info.txt'))
+
+    {
+        "path": "/users/paul/",
+        "name": "info",
+        "ext": "txt"
+    }
+
+    You could also make this using the split command and the join command
+
+project/src/modulename/file1.py 
+    def get_file_info(filepath: str) -> dict:
+        '''{
+            "path": "/users/paul/",
+            "name": "info",
+            "ext": "txt"
+        }'''
+    
+    file_info = {
+        "path": '/'.join(filepath.split('/')[.-1]),
+        "name": filepath.split('/')[-1].split('.')[0],
+        "ext": filepath.split('.')[-1]
+    }
+    return file_info
+
+    Don't use this solution i guess (it's not readable, and is overall not great, or easy to test)
+
+You can't put slashes(/) in filenames, it'll fuck shit up. Mac will pretend that your filename can have a slash, but'll exchange it with colon (:)
+
+Wanted Tests 
+    ('users/paul/.gitignore', {"path": "/users/paul/", "name": ".gitignore", "ext": None})
+    ('users/file.name.txt', {"path": "/users", "name": "file.name", "ext": "txt"})
+    ('users/paul/info', {"path": "/users/paul/", "name": "info", "ext": None})
+    ('/log.txt', {"path": "/", "name": "log", "ext": "txt"})
+    ('/.archive.tar.gz', {"path": "/", "name": "archive", "ext": "tar.gz"})
+
+project/tests/test.file1.py 
+    from modulename.file1 import get_file_info
+
+    def test_get_file_info():
+        #test 1
+        filepath = '/users/paul/info.txt'
+        expected = {
+            "path": "/users/paul/",
+            "name": "info",
+            "ext": "txt"
+        }
+        result get_file_info(filepath)
+        assert reuslt == expected 
+
+        #test 2 
+        filepath2 = ...
+
+project/tests/test_file1.py 
+    import pytest 
+    from modulename.file1 import get_file_info
+
+    @pytest.mark.parametrize('filepath, expected', [
+        ('users/paul/info.txt', {"path": "/users/paul/", "name": "info", "ext": "txt"}),
+        ...
+    ])
+
+Do edge test scenarios
+
+The information and lab belonging to this lecture is important for oblig 2 
+
+immich
