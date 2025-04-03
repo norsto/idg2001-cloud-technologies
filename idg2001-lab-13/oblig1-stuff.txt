@@ -1,0 +1,19 @@
+The website should mainly consume an API, which should support the following basic 
+features. 
+• Post tweets 
+POST tweet 
+
+• Edit tweets (?) 
+PUT tweet
+PATCH tweet  
+
+• List tweets 
+• Search for tweets 
+• Search for hashtags 
+• Make account 
+• List accounts 
+• Search for account 
+Architecture 
+The system should be split up in three levels: 
+• User-interface level – Written in whatever you want 
+• Processing level – REST API, using FastAPI or Flas
