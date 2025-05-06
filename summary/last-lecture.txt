@@ -1,0 +1,349 @@
+Cloud Tech Recap
+
+Regarding thecExam
+    - questions will probably be a mix of multiple-choise, discussion/explanation and some code/language questions
+    - planning on sending out exam-like questions, so you'll have an idea what to expect
+
+Cloud Tech Basics (1)
+    defenitions
+    cloud service models; saas, paas, iaas, your own server
+        we're more at paas
+        The Big (iaas, paas) providers:
+            - AWS (amazon web services)
+            - MS Azure (microsoft's thingy)
+            - GCP (google cloud platform)
+    private, public and hybrid cloud
+    distributed computing/systems 
+    systems, admins, devops, CI/DC, APIs, words
+    payment models(?)
+
+Python (2)
+    Indent is what defines code blocks 
+    Installs models using pip
+    Import models using "import x" or "from x import y"
+    Can use tools like flake8, black, mypy, ...
+    interpreted (not compiled)
+    ...
+    There's a yt video we could watch
+
+Client-Server Architecture (3)
+    design considerations
+        Distribution transparency 
+        openness 
+        failures
+        scalability (geographical and administrative)
+        techniques for scaling 
+            - loose coupling of the components
+            - stateless design
+            - db choise and design 
+            - async communication
+            - replication and caching
+        ...
+    Architectures
+        software vs system Architecture
+        components and ...
+        ...
+        layer based Architectures
+            layers only speek to their neighbor layers 
+        Object based Architectures
+            there isn't necessarily only one layer speaking with their neighbor layers,
+            multiple can speak to multiple (?)
+        ...
+        Event-based Architectures
+            local level or something
+        Web Architecture
+            ...
+        
+        centralized and decentralized 
+        multi-tiered architectures 
+
+Process, Viritualization and Communications (4)
+    Process vs thread
+        - a task can use 1 or more process 
+        - a process can use 1 or more threads 
+        - thread context switching is managed by the program/process 
+        - process context switching is managed by the operating system 
+        - process switching is slow thread switching is fas 
+        - process parallelism is "more" parallel
+    Viritualization
+        An interface between host system and subsystem 
+        e.g VMs, Docker, emulator, etc. 
+
+Communication and APIs (5)
+    connection-oriented vs connectionless 
+    ISO OSI (and similar models)
+    Layer               Protocols
+    5. application      FTP, HTTP, SMTP
+    4. Transport        TCP, UDP 
+    3. network          ipv4, ipv6 
+    2. data link        IEEE, WLAN, ethernet
+    1. physical         Fiber, copper, electromagnetic radiation, radio 
+
+    persistent vs transient
+        is the data kept or deleted after sending? e.g. sms/mail vs phone call
+    async vs sync (downsides of sync: client is blocked during communication)
+    discrete (TCP) vs streaming (UDP)
+    client-server
+        - generally transient synchronous communication 
+        - master-slave system, where client is the master and the server is the slave 
+
+    SOAP, REST, GraphQL, RPC 
+    organized in terms of, format, learning curve, community, use cases 
+
+    communication related dta structures / file types 
+        - JSON
+        - XML 
+        - CSV 
+        - YAML 
+        - (HTML)
+
+Data Formats (6)
+    look at filetypes 
+    structured vs unstructured
+        structured - CSV, XLSX
+        less structured - JSON, YAML, TOML, XML
+    plaintext - Not compressed 
+
+    CSV 
+        Importantly, many if my_SV files will include a space after the separator. This is texhnically not correct,
+        though most systems support it, and makes the file more readable. Bad habit, except sometimes 
+    _SV: TSV, WSL, custom CSV 
+
+    ... 
+        - Anything you want! But the less custom, the more portable, and easier it will be for others to use your 
+          custom file format structure 
+        - Markdown table 
+        - HTML table 
+        - Single-line table (whitespace independent) 
+
+        use cases 
+            - store data sets 
+            - send data (APIs)
+            - config file 
+        
+Web and HTTP (7)
+    SOAP 
+        simple object access protocol 
+        uses XML 
+    RESTful 
+        - representation state transfer 
+        - generally uses JSON, but can use any 
+        - Client-server Architectural style 
+        - communication is stateless 
+        - high support for caching 
+        - uniform and well-defined interface 
+        - layered (hierarchical) structures 
+
+    the structure of an URL 
+        queries is usually shown with a questionmark before them, yk as if you were asking 
+
+    HTTP 
+        - hypertext transfer protocol 
+        - TCP / IP 
+        - used with most API systems 
+        - methods:
+            - GET
+            - POST 
+            - PUT 
+            - DELETE 
+            - so on 
+        HTTP services: apache, gunicorn 
+
+More About REST (8)
+    1. figure out the data set
+    2. split the data set into resources 
+    3. name the resources with URIs 
+    4. expose a subset of the uniform interface 
+    5. design the representation(s) accepted from the client 
+    6. design the representation(s) served to the client 
+    7. integrate this resource into existing resources, using hypermedia links and forms 
+    8. consider the typical course of events: What's supposed to happen?
+    9. consider error conditions: What might go wrong?
+
+    WADL and WSDL are a bit like UML for data resources and describes how the data should be structured 
+    ...
+        UMLs are a sort of language/schema thing that you can use to visually show off how a website is structured
+
+    SOAP uses XML schemas 
+
+Lecture 08.5 + 12.5 - Testing
+    Unit testing, integration testing, API testing 
+        - unit: small components
+        - integration: multiple components together 
+        - API: Testing endpoints 
+        (black will tell you what the problems are)
+    testing expected and unexpected 
+    type hinting, style guiding, multi-env testing, github actions, etc.
+
+Data considerations (9)
+    Data characteristics 
+        1. physical characteristics
+        2. performance requirements 
+        3. volatility 
+        4. volume 
+        5. regulatory requirements 
+        6. retention period 
+
+    share and not share db 
+        pros:
+        - cheaper to share
+        cons:
+        - might be less secure 
+    
+    Relational DB and NoSQL DB?
+
+    Advantages of RDB 
+        -...
+
+    NoSQL 
+        - Similar to JSON structures ...
+
+Data Replications (10)
+    permanent replicas 
+        - few replicas, statically configured 
+        - mirroring using mirror sites geographically spread across internet 
+    server-initiated replicas (push caches) -> server needs to know all the caches, what they contains, etc. is good when you need to update all caches at once
+    client-initiated replicas (client caches) -> this one is often more practical 
+
+    - keep track of acces counts per file, aggregated by considering server closes to requesting clients 
+    - number of accesses drops below threshold D -> drop file
+    - number of acceses exeeds...
+    ...
+
+    push-based   
+        - ...
+    pull-based 
+        ...
+    hybrid form
+        ...
+
+    something about this being similar to assignment 2 
+
+    wow there's python things in this PowerPoint
+
+Docker (11)
+    oh no i missed some 
+
+    - docker client + server and the registry 
+    - docker images (container template)
+    - docker containers ("VM")
+    - docker file: setup file 
+    - volumes 
+    - networks
+
+    docker file     -> docker image         -> ...
+    ...
+
+    Stuff needs to be stored in a volume, because everything gets wiped when you shut stuff down 
+
+    example of a Dockerfile 
+        FROM node:19
+        WORKDIR /app 
+        COPY package*.json ./
+        RUN npm install 
+        COPY . .
+        ENV PORT=8080
+        EXPOSE 8080
+        RUN 
+        CMD
+
+Docker Compose (12)
+    commands 
+        docker ps 
+        docker images 
+        docker run ...
+        docker rm/rmi ...
+        docker-compose up 
+        docker-compose up --build 
+        docker-compose down 
+
+    docker volumes ...
+
+    docker run vs docker-compose 
+        - run launches single container from image 
+        - compose launches single or multiple image(s) at once, including networking 
+        - uses YAML file instead of multi... 
+    ...
+
+    scaling: split large number of users, calls or processes onto multiple smaller nodes 
+        - vertical vs horizontal scaling: bigger computers vs more computers
+        - load balancing 
+        - docker scale, docker swarm anf kubernetes (k8s) 
+    
+    dashboards, like grafana or horizon (OpenStack)
+    logging 
+
+    adobe lightroom -> adobe photoshop -> adobe lightroom     -v
+                                                            adobe premiere pro, adobe alter effects, adobe audition, adobe speedgrade ->
+                             adobe story -> adobe prelude     -^
+
+Cloud Extras (13)
+    git: CLI vs GUI, branches, remotes, authentication
+    security: cryptography, encryption, checksums, certificates, passwords 
+        - access: software and hardware 
+        - SSH and SSH keys (asymmetric cryptography)
+    files and formats: plaintext vs binary, compression and conversion (lossy and lossless)
+    hardware infrastructure: storage, transfer, processing, memory
+
+    cost models: usage, periodic, permanent 
+        - CPU time, RAM amount+time, storage amount, transfer/bandwidth 
+        - domains
+        - API costs: per request, free requests 
+    software/hardware costs 
+        - duration of software and hardware 
+        - investment in future-proofing 
+    something about mlm's ??
+    at some point renting is more expencive than owning 
+
+    caches: when to cache, cache location, personal cache 
+    load balancing: when it can make sense (symmetric)
+    CLI/shell: basic commands, moving ...
+
+    files and formats
+        - plaintext vs binary 
+        - compression 
+        - images and video 
+            - bitmap vs vector 
+        - export files vs work files 
+        - conversion and information loss 
+    
+    file (pptx) 
+    figures
+    text 
+    design? ...
+
+    the cycle of github stuff (look at pp)
+
+    don't push shit like authentication passwords and stuff to the github repo. it can be fixed but it shouldn't happen to begin with 
+
+
+Labs 
+    1. 
+    2. 
+    3. Python less python(?)
+    4. Pythin APIs 
+        - made a script using a public API 
+        - ...
+    5. Render
+    6. Data formats
+        - structuring data in different formats
+    7. More APIs 
+        - set up 2 APIs on Render 
+            - a main node
+            - a passthrough node (almost a cache)
+    8. Testing (we kinda skipped it, watched a video instead)
+        - set up loads of testing config files
+            -...
+        - some basics of unit testing, tyoe checking and style...
+    9. Caching 
+        - used existing external currency API and added a local cache to it 
+        - allowed the API to check... 
+    10. 
+    11. Docker 
+        - set up a simple JS server using docker 
+        -....
+    12. Docker Compose 
+        - used docker-compose to launche bigger projects (web APIs...) using a single command (...)
+
+Assignment 2
+    
